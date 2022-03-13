@@ -7,7 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=dev nodemon servier",
+    "start":"node servier",
+    "test" :"NODE_ENV=test jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,17 @@
   },
   "homepage": "https://github.com/GSG-G11/Farah-Reddit#readme",
   "devDependencies": {
-    "eslint": "^8.11.0"
+    "eslint": "^8.11.0",
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
+    "cookies-parser": "^1.2.0",
+    "env2": "^2.2.2",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "nodemon": "^2.0.15"
   }
 }
