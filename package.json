@@ -1,0 +1,26 @@
+{
+  "name": "farah-reddit",
+  "version": "1.0.0",
+  "description": "social news website",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G11/Farah-Reddit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G11/Farah-Reddit/issues"
+  },
+  "homepage": "https://github.com/GSG-G11/Farah-Reddit#readme",
+  "devDependencies": {
+    "eslint": "^8.11.0"
+  }
+}
