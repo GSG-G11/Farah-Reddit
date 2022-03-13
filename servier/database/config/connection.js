@@ -17,10 +17,12 @@ switch (NODE_ENV) {
         };
 
 }
+
 if(!db_url){
     throw new Error('data base does not exist')
 }
-console.log(db_url,ssl)
+
+
 const options={
     connectionString:db_url,
     ssl,
