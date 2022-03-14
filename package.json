@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "NODE_ENV=dev nodemon servier",
+    "dev": "NODE_ENV=dev nodemon server",
     "start": "node servier",
     "test": "NODE_ENV=test jest"
   },
@@ -30,6 +30,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
     "cookies-parser": "^1.2.0",
     "env2": "^2.2.2",
     "express": "^4.17.3",
