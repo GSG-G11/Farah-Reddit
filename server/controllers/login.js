@@ -8,6 +8,7 @@ const { logInValidation } = require("../validation")
 
 const logIn = (req, res) => {
     const { username, password } = req.body
+    let id;
     logInValidation({ username, password })
         .then(() => hasUserExist(username))
         .then((data) => {
@@ -16,13 +17,17 @@ const logIn = (req, res) => {
             }
             return data.rows[0]
         })
-        .then((obj) => comparePassword(password, obj.password))
+        .then((obj) => {
+            id = obj.id;
+            return comparePassword(password, obj.password)
+        }
+        )
         .then((result) => {
             if (!result) {
                 CustomedError(400, 'wrong user name or wrong password')
             }
         })
-        .then(() => JWTsignPromise({ username, password }))
+        .then(() => JWTsignPromise({ username, id }))
         .then((token) => res.cookie('token', token).json(token))
         ////if error in JWTsignPromise is sever error
         .catch((err) => {
