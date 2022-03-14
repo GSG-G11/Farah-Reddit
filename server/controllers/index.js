@@ -6,7 +6,7 @@ const { pageNotFound } = require('./error/404')
 const { severError } = require('./error/500')
 const { addPost } = require('./posts/addPost')
 const { getPost } = require('./posts/getPost')
-
+const { profileHandler } = require('./profile')
 module.exports = {
     signUp,
     logIn,
@@ -15,5 +15,6 @@ module.exports = {
     pageNotFound,
     severError,
     addPost,
-    getPost
+    getPost,
+    profileHandler
 }
