@@ -6,33 +6,32 @@ const { CustomedError, hashingPassword, JWTsignPromise } = require('../utils')
 
 
 
-const signUp = (req, res) => {
+const signUp = (req, res,next) => {
 
     const { username, password, email } = req.body;
     sginUpValidation({ username, password, email })
         .then(() => EmailhasToken(email, username))
         .then((data) => {
-            console.log(data.rows.length)
+            
             if (data.rows.length) {
-                CustomedError(400, 'invalidInput')
+                console.log(data.rows.length)
+               throw CustomedError(400, 'invalidInput')
             }
         })
         //// if error in hashing password server error
         .then(() => hashingPassword(password))
         .then((hashPassword) => addUserQuery(hashPassword, username, email))
+            ////if error in JWTsignPromise is sever error
         .then((userInfo) =>  JWTsignPromise({ username ,id:userInfo.rows[0].id}))
         .then((token) => res.cookie('token', token).json(token))
-        ////if error in JWTsignPromise is sever error
+    
         .catch((err) => {
+            
             if (err.details) {
-                try {
-                    CustomedError(400, 'invalidInput')
-                }
-                catch (e) {
-                    res.json(JSON.parse(e.message).msg)
-                }
+              
+                next(CustomedError(400, 'invalidInput'))            
             }
-            res.json(JSON.parse(err.message).msg)
+            next(err)
         })
 }
 module.exports = { signUp };
