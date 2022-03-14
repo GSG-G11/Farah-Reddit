@@ -9,6 +9,7 @@ const { CustomedError, hashingPassword, JWTsignPromise } = require('../utils')
 const signUp = (req, res,next) => {
 
     const { username, password, email } = req.body;
+    console.log({ username, password, email })
     sginUpValidation({ username, password, email })
         .then(() => EmailhasToken(email, username))
         .then((data) => {
@@ -28,6 +29,7 @@ const signUp = (req, res,next) => {
         .catch((err) => {
             
             if (err.details) {
+                
               
                 next(CustomedError(400, 'invalidInput'))            
             }
