@@ -2,9 +2,11 @@ const { signUp } = require('./signUp')
 const { logIn } = require('./login')
 const { AUTH } = require('./Auth')
 const { main } = require('./main')
-const { pageNotFound } = require('./404')
-const { severError } = require('./500')
-const { addPost } = require('./addPost')
+const { pageNotFound } = require('./error/404')
+const { severError } = require('./error/500')
+const { addPost } = require('./posts/addPost')
+const { getPost } = require('./posts/getPost')
+
 module.exports = {
     signUp,
     logIn,
@@ -12,5 +14,6 @@ module.exports = {
     main,
     pageNotFound,
     severError,
-    addPost
+    addPost,
+    getPost
 }
