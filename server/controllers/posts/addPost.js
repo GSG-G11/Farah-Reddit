@@ -1,6 +1,6 @@
-const { addPostQuery } = require("../database/quries");
-const { CustomedError } = require("../utils");
-const {postValidation }= require("../validation");
+const { addPostQuery } = require("../../database/quries");
+const { CustomedError } = require("../../utils");
+const {postValidation }= require("../../validation");
 
 
 const addPost=(req,res,next)=>{
