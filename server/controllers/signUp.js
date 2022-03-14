@@ -20,7 +20,7 @@ const signUp = (req, res) => {
         //// if error in hashing password server error
         .then(() => hashingPassword(password))
         .then((hashPassword) => addUserQuery(hashPassword, username, email))
-        .then((userInfo) =>  JWTsignPromise({ username, email ,id:userInfo.rows[0].id}))
+        .then((userInfo) =>  JWTsignPromise({ username ,id:userInfo.rows[0].id}))
         .then((token) => res.cookie('token', token).json(token))
         ////if error in JWTsignPromise is sever error
         .catch((err) => {
