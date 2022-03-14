@@ -1,6 +1,7 @@
 
 const { EmailhasToken, addUserQuery } = require("../database/quries");
-const { sginUpValidation, CustomedError, hashingPassword, JWTsignPromise } = require("../validation");
+const { sginUpValidation } = require("../validation");
+const {CustomedError, hashingPassword, JWTsignPromise}=require('../utils')
 
 
 
