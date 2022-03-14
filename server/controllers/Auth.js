@@ -9,13 +9,10 @@ req.userInfo=decoded
 
 next()
 })
-.catch(()=>{
-    try{
-        CustomedError(400,'not allow to access')
-    }
-    catch(e){
-        res.json(JSON.parse(e.message).msg)
-    }
+.catch((err)=>{
+   
+       next(CustomedError(400,'not access'))
+   
     
 })
 

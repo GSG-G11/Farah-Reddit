@@ -6,25 +6,28 @@ const { logInValidation } = require("../validation")
 
 
 
-const logIn = (req, res) => {
+const logIn = (req, res,next) => {
     const { username, password } = req.body
     let id;
     logInValidation({ username, password })
         .then(() => hasUserExist(username))
         .then((data) => {
             if (!data.rows.length) {
-                CustomedError(400, 'wrong user name or wrong password')
+               throw CustomedError(400, 'wrong user name or wrong password')
             }
             return data.rows[0]
         })
         .then((obj) => {
+           
             id = obj.id;
             return comparePassword(password, obj.password)
         }
         )
         .then((result) => {
+            console.log(result)
             if (!result) {
-                CustomedError(400, 'wrong user name or wrong password')
+                console.log('the result',result)
+                throw CustomedError(400, 'wrong user name or wrong password')
             }
         })
         .then(() => JWTsignPromise({ username, id }))
@@ -32,15 +35,9 @@ const logIn = (req, res) => {
         ////if error in JWTsignPromise is sever error
         .catch((err) => {
             if (err.details) {
-                try {
-                    CustomedError(400, 'invalidInput')
-                }
-                catch (e) {
-                    res.json(JSON.parse(e.message).msg)
-                }
-
+                   next(CustomedError(400, 'invalidInput'))
             }
-            res.json(JSON.parse(err.message).msg)
+           next(err)
         })
 }
 module.exports = { logIn }
