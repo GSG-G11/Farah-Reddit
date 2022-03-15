@@ -46,7 +46,7 @@ header{
 
     display: flex;
     flex-direction: column;
-    padding: 0 220px;
+    padding: 0 350px;
   
    
 }
@@ -125,4 +125,45 @@ header{
 .icons{
  
    margin-top: 15px;
+}
+.title{
+    width: 50vw;
+    height: 80px;
+    border-bottom: 1px solid #fff;
+}
+.title p{
+    padding-top: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.formPost{
+    margin-top:15px;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 65vh;
+}
+.formPost input{
+    margin-left: 40px;
+    width: 44vw;
+    margin-top:20px;
+    height: 35px;
+
+}
+.formPost textarea{
+    margin-left: 40px;
+    margin-top:20px;
+    width: 44vw; 
+}
+.addBtn{
+    margin-top:20px;   
+    border: none;
+    width: 44vw;
+    height: 40px;
+    margin-left: 45px;
+    background-color: #0079d3;
+    color: #fff;
+    
 }
