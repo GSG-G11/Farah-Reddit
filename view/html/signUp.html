@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Reddit</title>
+</head>
+<body>
+    <nav>
+        <img src="../assets/reddit.svg" class="img">
+    </nav>
+    <section>
+        <div class="signUpSection">
+            <h1>Sgin Up</h1>
+            <form id="signUpForm">
+            
+                <input type="email" value="" name ="email" placeholder="enter your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required >
+           
+                <input type="input" value="" name="username" placeholder="username" min="3" max="200" required>
+              
+                <input type="password" min="8" placeholder="password" required>
+                <input type="password" min="8" placeholder="repeat Password" required>
+                <button type="submit" class="btn"> Sign Up</button>
+            </form>
+            <p> have a acount ? <a href="/api/v1/login">here</a></p>
+        </div>
+    </section>
+</body>
+</html>
