@@ -1,6 +1,6 @@
 const severError=(err,req,res,next)=>{
     if(err.status){
-        res.json(JSON.parse(err.message).msg,err.status)
+        res.json(err.message)
     }else{
         res.json('SERVER ERROR')
     }

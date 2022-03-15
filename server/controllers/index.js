@@ -7,6 +7,7 @@ const { severError } = require('./error/500')
 const { addPost } = require('./posts/addPost')
 const { getPost } = require('./posts/getPost')
 const { profileHandler } = require('./profile')
+const {deletePost}=require('./posts/deletePost')
 module.exports = {
     signUp,
     logIn,
@@ -16,5 +17,6 @@ module.exports = {
     severError,
     addPost,
     getPost,
-    profileHandler
+    profileHandler,
+    deletePost
 }
