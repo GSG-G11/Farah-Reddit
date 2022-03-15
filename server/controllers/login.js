@@ -13,7 +13,7 @@ const logIn = (req, res,next) => {
         .then(() => hasUserExist(username))
         .then((data) => {
             if (!data.rows.length) {
-               throw CustomedError(400, 'wrong user name or wrong password')
+               throw CustomedError(400, 'usrer not found')
             }
             return data.rows[0]
         })

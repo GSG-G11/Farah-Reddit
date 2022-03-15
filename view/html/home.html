@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/home.css">
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -13,8 +14,10 @@
         <img src="../../assets/reddit.svg" class="img">
         <nav>
             <ul class="links">
-                <li><i class="fa fa-user" style="font-size:24px"></i>Profile</li>
-                <li><i class="fa fa-home" style="font-size:24px"></i>Home</li>
+           
+                <li><span class="iconify" data-icon="bx:home"></span></li>
+                <li><span class="iconify" data-icon="bx:user" data-flip="horizontal"></span></li>
+                <li><span class="iconify" data-icon="bx:plus"></span></li>
             </ul>
         </nav>
         <div class="logoutSection">
@@ -23,15 +26,30 @@
         </div>
     </header>
     <section class="postSection">
+        <div class="inputPostSection">
+    
+            <form class="postForm">
+                <input type="text" class="postInput" value="" name ="post" placeholder="create post" >
+            </form>
+        </div>
         <div class="post">
-            <div class="VoteSide">vote</div>
+            <div class="VoteSide">
+         
+                <p><span class="iconify" data-icon="bx:upvote"></span></p>
+                <p>24</p>
+                <p><span class="iconify"  data-icon="bx:downvote"></span></p>
+            </div>
             <div class="contentSide">
-                <div class="postHeader"></div>
+                <div class="postHeader">
+                  
+                    <p>farah</p>
+                </div>
                 <div class="postContent">
                     <p>
                         Palestinian youths relax on the beach of Rafah in the southern Gaza Strip, despite the tense security situation in the Strip after the capture of Corporal Gilad Shalit, June 2006
                     </p>
                     <img src="../../assets/img.jpeg" class="imgCont">
+                          <a><span class="iconify" data-icon="bx:comment"></span> 0 comment</a>
                 </div>
             </div>
 
@@ -45,6 +63,15 @@
                         Palestinian youths relax on the beach of Rafah in the southern Gaza Strip, despite the tense security situation in the Strip after the capture of Corporal Gilad Shalit, June 2006
                     </p>
                     <img src="../../assets/img.jpeg"  class="imgCont">
+                    <div>
+                   
+                            
+                           
+                          
+
+                           
+                       
+                    </div>
                 </div>
             </div>
 
