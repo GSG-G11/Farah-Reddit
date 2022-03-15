@@ -3,7 +3,12 @@
 const sendData=(url,dataObject)=>{
     axios.post(url,dataObject)
     .then(data=>{
-        window.location.href="/"
+       console.log(data)
     })
-    .catch((err)=>console.log('the errro',err.response.data))
+    .catch((err)=>swal({
+        icon: 'error',
+        title: 'Oops...',
+        text: err.response.data,
+    }))
+ 
 }
