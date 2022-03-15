@@ -23,6 +23,10 @@ section{
     justify-content: center;
 
 }
+.LogInSection{
+    width: 300px;
+    height: 300px;   
+}
 .signUpSection{
    /* background-color: #fff;*/
     /*background-color:rgba(29,36,52,0.8);*/
