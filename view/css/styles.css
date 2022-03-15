@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    background-color: #DAE0E6;
+}
+nav{
+    background-color: #fff;
+    height: 50px;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+.img{
+    width: 100px;
+    height: 50px;
+    padding-left: 30px;
+}
+section{
+    height: 600px;
+    display: flex;
+   align-items: center;
+    justify-content: center;
+
+}
+.signUpSection{
+   /* background-color: #fff;*/
+    /*background-color:rgba(29,36,52,0.8);*/
+
+    width: 300px;
+    height: 300px;
+}
+#signUpForm{
+    display: flex;
+    flex-direction: column;
+}
+.signUpSection h1{
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+#signUpForm input{
+    width: 280px;
+    height: 35px;
+    margin-bottom: 20px;
+}
+#LogInForm input{
+    width: 280px;
+    height: 35px;
+    margin-bottom: 20px;
+}
+.btn{
+    border: none;
+    width: 280px;  
+    height: 35px;
+    border: none;
+    background-color: #0079d3;
+    color: white;
+    margin: 2px;
+}
