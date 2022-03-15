@@ -9,14 +9,13 @@ const { CustomedError, hashingPassword, JWTsignPromise } = require('../utils')
 const signUp = (req, res,next) => {
 
     const { username, password, email } = req.body;
-    console.log({ username, password, email })
     sginUpValidation({ username, password, email })
         .then(() => EmailhasToken(email, username))
         .then((data) => {
             
             if (data.rows.length) {
                 console.log(data.rows.length)
-               throw CustomedError(400, 'invalidInput')
+               throw CustomedError(401, 'email or username has already token')
             }
         })
         //// if error in hashing password server error
@@ -31,7 +30,7 @@ const signUp = (req, res,next) => {
             if (err.details) {
                 
               
-                next(CustomedError(400, 'invalidInput'))            
+                next(CustomedError(401, 'Invalid input'))            
             }
             next(err)
         })
