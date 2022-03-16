@@ -20,7 +20,9 @@ voteDiv.append(p,p2)
 const postHeader=document.createElement('div')
 postHeader.className='postHeader';
 const username=document.createElement('p')
+username.setAttribute('userId',postInfo.user_id)
 postHeader.appendChild(username)
+
 username.textContent=postInfo.username;
 const postContent=document.createElement('div')
 postContent.className='postContent';
@@ -46,4 +48,10 @@ postContent.append(title,content,img,comment)
 contentDiv.append(postHeader,postContent)
 post.append(voteDiv,contentDiv)
 posts.append(post)
+
+postHeader.addEventListener('click',(e)=>{
+   let id =e.target.getAttribute("userId")
+   
+   window.location.href=`/profile/${id}`
+})
 }
