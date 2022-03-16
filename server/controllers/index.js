@@ -8,6 +8,7 @@ const { addPost } = require('./posts/addPost')
 const { getPost } = require('./posts/getPost')
 const { profileHandler } = require('./profile')
 const {deletePost}=require('./posts/deletePost')
+const{profilePage}=require('./pages/profilePage')
 module.exports = {
     signUp,
     logIn,
@@ -18,5 +19,6 @@ module.exports = {
     addPost,
     getPost,
     profileHandler,
-    deletePost
+    deletePost,
+    profilePage
 }
