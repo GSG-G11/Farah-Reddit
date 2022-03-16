@@ -20,8 +20,12 @@ voteDiv.append(p,p2)
 const postHeader=document.createElement('div')
 postHeader.className='postHeader';
 const username=document.createElement('p')
+const deletePost=document.createElement('button')
+deletePost.textContent='delete';
+deletePost.style.display='none'
+
 username.setAttribute('userId',postInfo.user_id)
-postHeader.appendChild(username)
+postHeader.append(username,deletePost)
 
 username.textContent=postInfo.username;
 const postContent=document.createElement('div')
@@ -49,9 +53,20 @@ contentDiv.append(postHeader,postContent)
 post.append(voteDiv,contentDiv)
 posts.append(post)
 
-postHeader.addEventListener('click',(e)=>{
+username.addEventListener('click',(e)=>{
    let id =e.target.getAttribute("userId")
    
    window.location.href=`/profile/${id}`
 })
+let id =localStorage.getItem('userId')
+if(id == postInfo.user_id){
+   console.log('hello')
+   deletePost.style.display='flex' 
+   deletePost.addEventListener('click',(e)=>{
+      sendData('/api/v1/deletepost',{postId:postInfo.id,UserId: postInfo.user_id})
+      .then(e.target.parentElement.parentElement.parentElement.remove())
+
+   })
+   }
 }
+

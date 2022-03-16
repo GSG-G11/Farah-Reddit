@@ -3,10 +3,11 @@ const {  checkifOwners} = require("../../utils")
 
 const deletePost=(req,res,next)=>{
     const {postId ,UserId}=req.body
+    console.log({postId,UserId})
 
    checkifOwners(req.userInfo.id,UserId)
    .then(()=>deletePostQuery(postId,UserId))
-   .then(()=>res.json('successful deleted'))
+   .then((data)=>res.json(data.rows))
     .catch(err=>{    
         next(err)
     })
