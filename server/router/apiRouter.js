@@ -7,7 +7,7 @@ const { signUp ,logIn, AUTH,main,addPost, getPost, profileHandler, deletePost} =
 apiRouter.post('/signup',signUp)
 apiRouter.post('/login',logIn)
 apiRouter.use(AUTH)
-apiRouter.get('/home',main)
+apiRouter.get('/user',main)
 apiRouter.post('/post',addPost)
 apiRouter.get('/posts',getPost)
 apiRouter.get('/profile/:id',profileHandler)

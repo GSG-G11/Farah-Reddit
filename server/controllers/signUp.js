@@ -23,6 +23,7 @@ const signUp = (req, res,next) => {
         .then((hashPassword) => addUserQuery(hashPassword, username, email))
             ////if error in JWTsignPromise is sever error
         .then((userInfo) =>  JWTsignPromise({ username ,id:userInfo.rows[0].id}))
+     
         .then((token) => res.cookie('token', token).json(token))
     
         .catch((err) => {
