@@ -11,6 +11,6 @@ apiRouter.get('/user',main)
 apiRouter.post('/post',addPost)
 apiRouter.get('/posts',getPost)
 apiRouter.get('/profile/:id',profileHandler)
-apiRouter.delete('/post',deletePost)
+apiRouter.post('/deletepost',deletePost)
 
 module.exports= apiRouter;
