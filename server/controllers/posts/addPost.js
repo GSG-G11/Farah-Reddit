@@ -6,6 +6,7 @@ const {postValidation }= require("../../validation");
 
 const addPost=(req,res,next)=>{
     const {title,content,userId,img} =req.body
+   
         let post;
     postValidation({title,content,userId,img})
     .then(()=>addPostQuery(title,content,userId,img))
@@ -23,7 +24,7 @@ const addPost=(req,res,next)=>{
         if(err.details){
             next(CustomedError(400,'invalid input'))
         }
-        console.log(err)
+
         next(err)
     })
 
