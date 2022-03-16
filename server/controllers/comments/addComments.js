@@ -2,7 +2,9 @@ const { addCommentsQuery } = require("../../database/quries")
 
 const addComments=(req,res,next)=>{
     const{content,userId,postId}=req.body;
-    console.log(content,userId,postId)
-addCommentsQuery(content,userId,postId).then((data)=>res.json(data.rows)).catch((err)=>console.log(err))
+
+addCommentsQuery(content,userId,postId).then((data)=>{
+    data.rows[0].username= req.userInfo.username
+    res.json(data.rows[0])}).catch((err)=>console.log(err))
 }
 module.exports={addComments}

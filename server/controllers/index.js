@@ -16,7 +16,7 @@ const {loginPage}=require('./pages/loginPage')
 const {getPostsComments}=require('./comments/getPostsComments')
 const {getSinglePost}=require('./posts/getSinglePost')
 const { addComments } = require('./comments/addComments')
-
+const { postDetail }=require('./pages/postDetails')
 
 module.exports = {
     signUp,
@@ -36,7 +36,8 @@ module.exports = {
     loginPage,
     getPostsComments,
     getSinglePost,
-    addComments
+    addComments,
+    postDetail
     
   
 }
