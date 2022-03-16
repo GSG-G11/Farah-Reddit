@@ -4,6 +4,7 @@ signUpForm.addEventListener('submit',(e)=>{
     const{email, password,repeatPassword, username}=e.target;
     if(password.value === repeatPassword.value){
         sendData('/api/v1/signup',{username:username.value.trim(),email:email.value.trim(),password:password.value.trim()})
+        .then(()=>  window.location.href="/home")
     }
     else{
         swal({
