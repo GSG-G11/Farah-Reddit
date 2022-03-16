@@ -1,4 +1,17 @@
 const posts =document.querySelector('.postSection')
+const commentsDiv =document.querySelector('.commentsContainer')
+const renderComments=(commentInfo)=>{
+   const commentDiv=document.createElement('div')
+   commentDiv.className='comment'
+   const commentContent = document.createElement('p')
+   commentContent.textContent=commentInfo.content
+   commentContent.className='CommentText'
+   const ownerName=document.createElement('p')
+   ownerName.textContent=commentInfo.username
+   ownerName.className='usernameComment'
+   commentDiv.append(ownerName,commentContent)
+   commentsDiv.append(commentDiv)
+}
 const renderPost=(postInfo)=>{
 const post =document.createElement('div')
 post.className='post';
@@ -52,7 +65,10 @@ postContent.append(title,content,img,comment)
 contentDiv.append(postHeader,postContent)
 post.append(voteDiv,contentDiv)
 posts.append(post)
-
+comment.addEventListener('click',()=>{
+   let postId= postInfo.id
+   window.location.href=`/post/${postId}/show`
+})
 username.addEventListener('click',(e)=>{
    let id =e.target.getAttribute("userId")
    

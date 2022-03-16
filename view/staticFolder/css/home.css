@@ -193,13 +193,13 @@ header{
     padding:10px 70px;
 }
 .commentContent{
-width: 600px;
+width: 45vw;
 }
 .commentBtn{
     border: none;
     background-color: #0079d3;
     color:#fff;
-    width:600px;
+    width: 45vw;
     height: 30px;
     
 }
@@ -209,7 +209,8 @@ width: 600px;
 }
 .comment{
     border-bottom: 2px solid #000;
-    margin-top:20px;
+    margin-top:10px;
+    margin-bottom: 10px;
     padding-bottom: 5px;
 }
 .usernameComment{
