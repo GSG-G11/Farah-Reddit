@@ -1,4 +1,5 @@
 const formPost=document.querySelector('.formPost')
+
 formPost.addEventListener('submit',(e)=>{
     e.preventDefault()
     const {postTitle ,postDetail,img}=e.target;

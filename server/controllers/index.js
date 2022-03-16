@@ -13,6 +13,10 @@ const { signUpPage } = require('./pages/signUpPage')
 const {homePage}=require('./pages/homePage')
 const {addPostPage}=require('./pages/addPost')
 const {loginPage}=require('./pages/loginPage')
+const {getPostsComments}=require('./comments/getPostsComments')
+const {getSinglePost}=require('./posts/getSinglePost')
+const { addComments } = require('./comments/addComments')
+
 
 module.exports = {
     signUp,
@@ -29,6 +33,10 @@ module.exports = {
     profilePage,
     homePage,
     addPostPage,
-    loginPage
+    loginPage,
+    getPostsComments,
+    getSinglePost,
+    addComments
+    
   
 }
