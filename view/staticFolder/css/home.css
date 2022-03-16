@@ -67,6 +67,14 @@ header{
     width: 500px;
     background-color:#DAE0E6 ;
 }
+.postwithComments{
+    width: 55vw;
+    background-color: #fff;
+    display:flex;
+    flex-direction: row;
+    margin-top: 40px;
+    border-radius: 2px;  
+}
 .post{
     width: 45vw;
     background-color: #fff;
@@ -169,4 +177,46 @@ header{
     background-color: #0079d3;
     color: #fff;
     
+}
+.commentSection{
+    width: 80vw;
+
+    display: flex;
+    flex-direction: column;
+    padding-left: 250px; 
+}
+.comments{
+    width: 55vw;
+    background-color: #fff;  
+}
+.addComments{
+    padding:10px 70px;
+}
+.commentContent{
+width: 600px;
+}
+.commentBtn{
+    border: none;
+    background-color: #0079d3;
+    color:#fff;
+    width:600px;
+    height: 30px;
+    
+}
+.commentsContainer{
+    padding :0 80px;
+
+}
+.comment{
+    border-bottom: 2px solid #000;
+    margin-top:20px;
+    padding-bottom: 5px;
+}
+.usernameComment{
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.CommentText{
+    font-size: 16px;  
 }
