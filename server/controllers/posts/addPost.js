@@ -5,10 +5,11 @@ const {postValidation }= require("../../validation");
 
 
 const addPost=(req,res,next)=>{
+
     const userId =req.userInfo.id
-    console.log({title,content,img})
+ 
     const {title,content,img} =req.body
-   
+    console.log(title,content,img)
         let post;
     postValidation({title,content,userId,img})
     .then(()=>addPostQuery(title,content,userId,img))
