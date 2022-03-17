@@ -1,7 +1,8 @@
 const postSection = document.querySelector('.postSection')
+console.log('hhh')
 getData('/api/v1/posts').then(res => {
-    if (res.data.length) res.data.forEach(element => renderPost(element))
-    else postSection.textContent = 'no posts yet'
+    res.data.forEach(element => renderPost(element))
+   
 })
     .catch((err) => swal({
         icon: 'error',

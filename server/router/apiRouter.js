@@ -14,7 +14,7 @@ apiRouter.get('/profile/:id',profileHandler)
 apiRouter.use(AUTH)
 apiRouter.get('/user',main)
 apiRouter.post('/comment',addComments)
-apiRouter.post('/post',addPost)
+apiRouter.post('/posts',addPost)
 apiRouter.post('/deletepost',deletePost)
 
 
