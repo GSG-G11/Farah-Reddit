@@ -25,7 +25,6 @@ const logIn = (req, res, next) => {
         })
         .then(() => JWTsignPromise({ username, id }))
         .then((token) => {
-            console.log(token)
             res.cookie('token', token).json(token)})
         ////if error in JWTsignPromise is sever error
         .catch((err) => {
