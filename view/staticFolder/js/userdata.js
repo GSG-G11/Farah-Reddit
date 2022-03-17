@@ -8,7 +8,9 @@ getData('/api/v1/user').then(res=>{
     localStorage.setItem('userId',res.data.id)
     userNameHeader.textContent=res.data.username    
 })
+
 add.addEventListener('click',()=>{
+ 
     window.location.href='/addPost'
 })
 home.addEventListener('click',()=>{

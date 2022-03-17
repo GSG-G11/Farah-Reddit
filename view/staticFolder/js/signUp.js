@@ -5,6 +5,11 @@ signUpForm.addEventListener('submit',(e)=>{
     if(password.value === repeatPassword.value){
         sendData('/api/v1/signup',{username:username.value.trim(),email:email.value.trim(),password:password.value.trim()})
         .then(()=>  window.location.href="/home")
+        .catch((err)=>swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: err.response.data,
+        }))
     }
     else{
         swal({
