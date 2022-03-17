@@ -8,7 +8,8 @@ const addPostInfo = (postInfo) => {
    console.log(postInfo)
    publicherName.setAttribute('userId', postInfo.user_id)
    publicherName.textContent = postInfo.username
-   imgLink.src == postInfo.img
+   imgLink.src = postInfo.img
+   imgLink.id="imgLink"
    publicherName.addEventListener('click', (e) => {
       let id = e.target.getAttribute("userId")
       window.location.href = `/profile/${id}`
