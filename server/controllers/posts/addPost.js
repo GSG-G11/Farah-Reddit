@@ -5,15 +5,17 @@ const {postValidation }= require("../../validation");
 
 
 const addPost=(req,res,next)=>{
+
     const userId =req.userInfo.id
-    console.log(userId)
+ 
     const {title,content,img} =req.body
-   
+    console.log(title,content,img)
         let post;
     postValidation({title,content,userId,img})
     .then(()=>addPostQuery(title,content,userId,img))
     /////can get name from req.userInfo.username
     .then((data)=>{
+      
         post=data.rows[0];  
         return getUserNameQuery(data.rows[0].user_id)})
     .then((userdata)=>{  

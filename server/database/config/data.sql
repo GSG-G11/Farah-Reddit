@@ -1,4 +1,6 @@
 BEGIN;
+
+DROP TABLE IF EXISTS  users,posts,comments CASCADE ;
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     username VARCHAR(200) UNIQUE NOT NULL,
