@@ -20,14 +20,15 @@ const logIn = (req, res, next) => {
         }
         )
         .then((result) => {
-            console.log(result)
             if (!result) {
                 console.log('the result', result)
                 throw CustomedError(400, 'wrong user name or wrong password')
             }
         })
         .then(() => JWTsignPromise({ username, id }))
-        .then((token) => res.cookie('token', token).json(token))
+        .then((token) => {
+            console.log(token)
+            res.cookie('token', token).json(token)})
         ////if error in JWTsignPromise is sever error
         .catch((err) => {
             if (err.details) {

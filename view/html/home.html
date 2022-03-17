@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="../css/home.css">
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
     <title>Document</title>
 </head>
 
 <body>
-    <header>
+    <header class="AuthHeader">
         <img src="../../assets/reddit.svg" class="img">
         <nav>
             <ul class="links">
@@ -23,9 +24,21 @@
                 <li><span class="iconify" data-icon="bx:plus" id="plus"></span></li>
             </ul>
         </nav>
+        
         <div class="logoutSection">
             <p class="userName">farah</p>
             <p><a href="#"> log out</a></p>
+        </div>
+    </header>
+    
+
+    <header class="UnAuth">
+        <img src="../../assets/reddit.svg" class="img">
+       
+        
+        <div class="logoutSection">
+            <p><a href="/signUp"> sign up</a></p>
+            <p><a href="/"> log in</a></p>
         </div>
     </header>
     <section class="postSection">
