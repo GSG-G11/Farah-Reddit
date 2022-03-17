@@ -16,9 +16,8 @@ const logIn = (req, res, next) => {
         })
         .then((obj) => {
             id = obj.id;
-            return comparePassword(password, obj.password)
-        }
-        )
+           return comparePassword(password, obj.password)
+        })
         .then((result) => {
             if (!result) {
                 console.log('the result', result)

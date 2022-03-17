@@ -11,7 +11,6 @@ const addPostInfo = (postInfo) => {
    imgLink.src == postInfo.img
    publicherName.addEventListener('click', (e) => {
       let id = e.target.getAttribute("userId")
-
       window.location.href = `/profile/${id}`
    })
    commentButton.addEventListener('click', () => {
