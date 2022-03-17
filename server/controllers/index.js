@@ -17,6 +17,7 @@ const {getPostsComments}=require('./comments/getPostsComments')
 const {getSinglePost}=require('./posts/getSinglePost')
 const { addComments } = require('./comments/addComments')
 const { postDetail }=require('./pages/postDetails')
+const {logOut} =require('./Auth/logOut')
 
 module.exports = {
     signUp,
@@ -37,7 +38,8 @@ module.exports = {
     getPostsComments,
     getSinglePost,
     addComments,
-    postDetail
+    postDetail,
+    logOut
     
   
 }

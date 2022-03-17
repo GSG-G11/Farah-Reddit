@@ -5,6 +5,7 @@ const add = document.querySelector('#plus')
 const AuthHeader=document.querySelector(".AuthHeader")
 const UnAuth=document.querySelector('.UnAuth')
 const img =document.querySelector('.img')
+const logOut=document.querySelector('#logOut')
 console.log('herer')
 getData('/api/v1/user').then(res=>{
     userNameHeader.textContent=res.data.username      
@@ -22,7 +23,13 @@ getData('/api/v1/user').then(res=>{
         text: err.response.data,
     })
 }})
-img.addEventListener('click',()=>window.location.href='/')
+logOut.addEventListener('click',()=>{
+    console.log('i ma hrer')
+    getData('/api/v1/logout').then((data)=>{
+        console.log(data.data)
+        window.location.href='/'})
+})
+img.addEventListener('click',()=>window.location.href='/login')
 add.addEventListener('click',()=>{
     console.log('data')
     window.location.href='/addPost'})
