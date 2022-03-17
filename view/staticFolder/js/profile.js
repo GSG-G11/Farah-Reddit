@@ -1,4 +1,4 @@
-
+const postSection=document.querySelector('.postSection')
 let id =window.location.href.split('/')[4]
 getData(`/api/v1/profile/${id}`)
 .then(res => {

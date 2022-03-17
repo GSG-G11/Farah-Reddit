@@ -80,6 +80,7 @@ const renderPost = (postInfo) => {
    const span3 = document.createElement('span')
    span3.setAttribute('class', 'iconify')
    span3.setAttribute('data-icon', 'bx:comment')
+   span3.id="commentIcon"
    comment.append(span3)
    postContent.append(title, content, img, comment)
    contentDiv.append(postHeader, postContent)

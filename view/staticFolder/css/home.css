@@ -119,7 +119,7 @@ body{
    
     width: 7%;
     background-color: #FFFFFF;
-    padding-left: 10px;
+    padding: 10px;
     
 }
 .contentSide{
@@ -240,4 +240,7 @@ width: 45vw;
 }
 .CommentText{
     font-size: 16px;  
+}
+.postTitle{
+    text-align: center;
 }
