@@ -2,14 +2,18 @@ const { jwtVerifyPromise, CustomedError } = require("../../utils")
 
 
 const AUTH = (req, res, next) => {
-    const token = req.cookies.token
-   
-    jwtVerifyPromise(token)
+    if (!req.cookies.token) {
+        console.log('the token ', req.cookies.token)
+        next(CustomedError(401, 'please log in'))
+    }
+    else {
+        const token = req.cookies.token
+        jwtVerifyPromise(token)
         .then((decoded) => {
             req.userInfo = decoded
-            
             next()
         })
-        .catch((err) => next(CustomedError(401, 'you can not access log in')))
+        .catch(() => next(CustomedError(401, 'please log in')))
+    }
 }
 module.exports = { AUTH }

@@ -2,7 +2,7 @@ const addCommentsForm=document.querySelector('.addCommentsForm')
 const id=window.location.href.split('/')[4]
 const userId=localStorage.getItem("userId")
 
-getData(`/api/v1/post/${id}`).then((data)=>console.log('the data',data.data))
+getData(`/api/v1/post/${id}`).then((res)=>res.data.forEach(element=>addPostInfo(element)))
 getData(`/api/v1/post/${id}/comments`)
 .then((res)=> res.data.forEach(element => renderComments(element)))
 .catch((err)=>swal({

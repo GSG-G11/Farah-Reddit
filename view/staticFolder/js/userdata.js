@@ -4,38 +4,39 @@ const home =document.querySelector('#home')
 const add = document.querySelector('#plus')
 const AuthHeader=document.querySelector(".AuthHeader")
 const UnAuth=document.querySelector('.UnAuth')
-console.log(UnAuth)
-
+const img =document.querySelector('.img')
+console.log('herer')
 getData('/api/v1/user').then(res=>{
-    console.log(res.data)
-
-    localStorage.setItem('userId',res.data.id)
-    userNameHeader.textContent=res.data.username
-           console.log('hrer')
+    userNameHeader.textContent=res.data.username      
         UnAuth.style.display='none'
         AuthHeader.style.display='flex'  
    
-}).catch((err)=>{
+}).catch((err)=>{  
     if(err.response.status ===401){
-        console.log('hrer')
         UnAuth.style.display='flex'
         AuthHeader.style.display='none'
-}
-});
-/*swal({
-    icon: 'error',
-    title: 'Oops...',
-    text: err.response.data,
-})}*/
-
+}else{
+    swal({
+        icon: 'error',
+        title: 'Oops...',
+        text: err.response.data,
+    })
+}})
+img.addEventListener('click',()=>window.location.href='/')
 add.addEventListener('click',()=>{
- 
-    window.location.href='/addPost'
-})
-home.addEventListener('click',()=>{
-    window.location.href='/home'
-})
+    console.log('data')
+    window.location.href='/addPost'})
+home.addEventListener('click',()=> window.location.href='/')
 user.addEventListener('click',()=>{
-    let id=localStorage.getItem('userId')
-    window.location.href=`/profile/${id}`
+    let id;
+    getData('/api/v1/user').then((res)=>{
+        id=res.data.id
+    }).then(()=> window.location.href=`/profile/${id}`)
+    .catch((err)=>{  
+        swal({
+            icon: 'error',
+            title: 'Oops...',
+            text: err.response.data,
+        })
+    })
 })

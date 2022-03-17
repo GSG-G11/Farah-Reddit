@@ -5,7 +5,7 @@ formPost.addEventListener('submit',(e)=>{
     const {postTitle ,postDetail,img}=e.target;
     let userId=localStorage.getItem('userId')
     sendData('/api/v1/post',{title:postTitle.value,content:postDetail.value,img:img.value,userId}).then(()=>{
-        window.location.href='/home'
+        window.location.href='/'
     }).catch((err)=>swal({
         icon: 'error',
         title: 'Oops...',
