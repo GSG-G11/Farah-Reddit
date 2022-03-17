@@ -8,7 +8,12 @@ const addPostInfo = (postInfo) => {
    console.log(postInfo)
    publicherName.setAttribute('userId', postInfo.user_id)
    publicherName.textContent = postInfo.username
-   imgLink.src = postInfo.img
+   if(postInfo.img){
+      imgLink.src = postInfo.img
+   }
+   else{
+      imgLink.src =""
+   }
    imgLink.id="imgLink"
    publicherName.addEventListener('click', (e) => {
       let id = e.target.getAttribute("userId")
@@ -70,8 +75,11 @@ const renderPost = (postInfo) => {
    content.textContent = postInfo.content
    content.className = 'content'
    const img = document.createElement('img')
-   img.src = postInfo.img
-
+      if(!postInfo.img){
+         img.style.display='none'
+      }else{
+         img.src =postInfo.img
+      }
 
    img.className = 'imgCont'
 
