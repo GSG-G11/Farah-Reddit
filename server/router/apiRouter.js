@@ -1,5 +1,5 @@
 const apiRouter=require('express').Router();
-const { signUp ,logIn, AUTH,main,addPost, getPost, profileHandler, deletePost, getPostsComments,getSinglePost,addComments} = require('../controllers');
+const { signUp ,logIn, AUTH,main,addPost, getPost, profileHandler, deletePost, getPostsComments,getSinglePost,addComments ,logOut} = require('../controllers');
 
 
 
@@ -16,6 +16,7 @@ apiRouter.get('/user',main)
 apiRouter.post('/comment',addComments)
 apiRouter.post('/posts',addPost)
 apiRouter.post('/deletepost',deletePost)
+apiRouter.get('/logout',logOut)
 
 
 
