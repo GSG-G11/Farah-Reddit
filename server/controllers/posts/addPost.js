@@ -14,8 +14,7 @@ const addPost=(req,res,next)=>{
     .then((data)=>{
         post=data.rows[0];  
         return getUserNameQuery(data.rows[0].user_id)})
-    .then((userdata)=>{
-    
+    .then((userdata)=>{  
         post.username=userdata.rows[0].username
         res.json(post)
     })
@@ -24,7 +23,6 @@ const addPost=(req,res,next)=>{
         if(err.details){
             next(CustomedError(400,'invalid input'))
         }
-
         next(err)
     })
 

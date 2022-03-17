@@ -5,5 +5,10 @@ logInForm.addEventListener('submit',(e)=>{
     const {username,password}=e.target;
     sendData('/api/v1/login',{username:username.value.trim(), password:password.value.trim()})
     .then(()=>  window.location.href='/home')
+    .catch((err)=>swal({
+        icon: 'error',
+        title: 'Oops...',
+        text: err.response.data,
+    }))
   
 })
