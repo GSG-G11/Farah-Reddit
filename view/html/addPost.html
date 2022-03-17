@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,9 +17,9 @@
         <img src="../../assets/reddit.svg" class="img">
         <nav>
             <ul class="links">
-                <li><span class="iconify" data-icon="bx:home" id="home"></span></li>
-                <li><span class="iconify" data-icon="bx:user" id="user" data-flip="horizontal"></span></li>
-                <li><span class="iconify" data-icon="bx:plus" id="plus"></span></li>
+                <li id="home"><span class="iconify" data-icon="bx:home" ></span></li>
+                <li id="user"><span class="iconify" data-icon="bx:user"  data-flip="horizontal"></span></li>
+                <li  id="plus"><span class="iconify" data-icon="bx:plus"></span></li>
             </ul>
         </nav>
         
@@ -27,21 +28,30 @@
             <p><a href="#"> log out</a></p>
         </div>
     </header>
+    <header class="UnAuth">
+        <img src="../../assets/reddit.svg" class="img">           
+        <div class="logoutSection">
+            <p><a href="/signUp"> sign up</a></p>
+            <p><a href="/login"> log in</a></p>
+        </div>
+    </header>
     <section class="postSection">
         <div class="title">
             <p>Create a post</p>
         </div>
         <div>
             <form class="formPost">
-                <input id="title" name="postTitle" placeholder="title" required min="3" max="200">  
-                <textarea id="detail" name="postDetail" rows="12" cols="50" placeholder="Text Option" required></textarea>
-                <input id="title" name="img" placeholder="Url Option">  
-              <button class="addBtn">post</button>            
-               </form>
+                <input id="title" name="postTitle" placeholder="title" required min="3" max="200">
+                <textarea id="detail" name="postDetail" rows="12" cols="50" placeholder="Text Option"
+                    required></textarea>
+                <input id="title" name="img" placeholder="Url Option">
+                <button class="addBtn">post</button>
+            </form>
         </div>
     </section>
     <script src="../js/axios.js"></script>
     <script src="../js/userdata.js"></script>
     <script src="../js/addpost.js"></script>
 </body>
+
 </html>

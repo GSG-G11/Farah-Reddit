@@ -5,7 +5,9 @@ const {postValidation }= require("../../validation");
 
 
 const addPost=(req,res,next)=>{
-    const {title,content,userId,img} =req.body
+    const userId =req.userInfo.id
+    console.log(userId)
+    const {title,content,img} =req.body
    
         let post;
     postValidation({title,content,userId,img})

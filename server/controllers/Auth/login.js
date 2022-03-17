@@ -2,7 +2,6 @@ const { hasUserExist } = require("../../database/quries")
 const { comparePassword, JWTsignPromise } = require("../../utils")
 const { CustomedError } = require("../../utils/CustomedError")
 const { logInValidation } = require("../../validation")
-
 const logIn = (req, res, next) => {
     const { username, password } = req.body
     let id;
@@ -16,9 +15,8 @@ const logIn = (req, res, next) => {
         })
         .then((obj) => {
             id = obj.id;
-            return comparePassword(password, obj.password)
-        }
-        )
+           return comparePassword(password, obj.password)
+        })
         .then((result) => {
             if (!result) {
                 console.log('the result', result)
@@ -32,7 +30,7 @@ const logIn = (req, res, next) => {
         ////if error in JWTsignPromise is sever error
         .catch((err) => {
             if (err.details) {
-                next(CustomedError(400, 'invalidInput'))
+             next(CustomedError(400, 'invalidInput'))
             }
             next(err)
         })

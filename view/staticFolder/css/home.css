@@ -25,6 +25,11 @@ body{
     height: 50px;
    
 }
+.img2{
+    width: 100px;
+    height: 50px;
+   
+}
 .links {
     list-style: none;
   }
@@ -185,6 +190,13 @@ body{
     background-color: #0079d3;
     color: #fff;
     
+}
+.commentSection2{
+    width: 80vw;
+
+    display: flex;
+    flex-direction: column;
+    padding-left: 250px; 
 }
 .commentSection{
     width: 80vw;
