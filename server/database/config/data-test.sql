@@ -31,4 +31,11 @@ INSERT INTO posts (title ,content,user_id) VALUES
 ('my first post','hello from testing',1),
 ('my secand post','hello from testing',1),
 ('my first post','hello from testing',2);
+INSERT INTO comments(content,  user_id , post_id)VALUES 
+('my first comment',1,2),
+('my secand comment',1,2),
+('my first comment',2,2),
+('my first comment',1,1);
+
+
 COMMIT;
